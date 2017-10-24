@@ -32,9 +32,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div style="height: 700px;margin-top: 175px;" class="loginDiv" >		
 		<h2 class="loginText" >登录聊天室</h2>
 		<div class="inputDiv">
-			<div class="inputText"><span>用户名： </span><input type="text" name="username" id="username" class="username"></div>
-			<div class="inputText"><span>密&nbsp;&nbsp;&nbsp;&nbsp;码： </span><input type="text" name="passwd" id="passwd" class="passwd"></div>
-			<button type="submit" value="登录" class="submit" >登 录</button>
+			<form action="login" method="POST" id="form">
+				<div class="inputText"><span>用户名： </span><input type="text" name="username" id="username" class="username"></div>
+				<div class="inputText"><span>密&nbsp;&nbsp;&nbsp;&nbsp;码： </span><input type="text" name="passwd" id="passwd" class="passwd"></div>
+			</form>
+			<input type="button" onclick="formSubmit()" value="提交">
 		</div>
 		
 	</div> 
@@ -74,6 +76,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   			}
   		} 		
   	});
+  	function formSubmit(){
+  		$("#form").submit();
+  	}
   	
   </script>
 </html>

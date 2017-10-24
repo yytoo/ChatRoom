@@ -6,6 +6,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.omg.CORBA.Request;
+
 import com.cr.bean.User;
 import com.cr.dao.LoginDAO;
 
@@ -25,8 +29,10 @@ public class LoginAction extends HttpServlet{
 		String passwd=req.getParameter("passwd");
 		LoginDAO loginDAO = new LoginDAO();
 		User user =loginDAO.selectUser(username, passwd);
+		HttpSession session = req.getSession();
 		if(user != null){
 			req.setAttribute("username", user.getUsername());
+			session.setAttribute("username", user.getUsername());
 			req.getRequestDispatcher("page/ChatRoom.jsp").forward(req, resp);
 		}else{
 			req.setAttribute("message", "username or passwd is wrong");

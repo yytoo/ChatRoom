@@ -1,6 +1,5 @@
 package com.cr.dao;
 
-import org.hibernate.Hibernate;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
@@ -16,6 +15,7 @@ public class LoginDAO {
 		query.setParameter(0, username);	
 		query.setParameter(1, passwd);	
 		user=(User) query.uniqueResult();
+		session.close();
 		return user;
 	}
 }

@@ -21,6 +21,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
+	<p hidden="hidden" name="username" id="username">${requestScope.username }</p>
   	<div class="roomDiv">
 	    <div style="width: 800px; height: 240px; overflow-y: auto; border: 1px solid #333;" id="show">
 	        <div class="showChatMessage"></div>   
@@ -31,31 +32,34 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	      </div>
     </div>
     <script type="text/javascript">
-    	var ws = new WebSocket("ws://127.0.0.1:8080/ChatRoom/webSocket");
-    	
+    	var username =$("#username").text();
+  
     	/*
     	 *监听的三种状态变化，js会回调
     	 */
+    	var ws = new WebSocket("ws://127.0.0.1:8080/ChatRoom/webSocket");   
     	ws.onopen=function(message){
+    	
     	};
     	ws.onclose=function(message){
     	};
-    	ws.onmessage = function(message){
-    		showMessage(message.data);
-    	};
-    	window.onbeforeunload=function(){   //监听窗口关闭事件，连接还没断开就关窗口，服务器端会报错
-    		ws.close();
-    	};
-    	function closeWebSocket(){
-    		ws.close();
-    	}
+    	ws.onmessage = function(message){   
+		  showMessage(message.data);
+		};
+		window.onbeforeunload=function(){   //监听窗口关闭事件，连接还没断开就关窗口，服务器端会报错
+		   ws.close();
+		};		    	
+		 function closeWebSocket(){
+		    ws.close();
+		  }
     	function send(){
-    		var text = $("#msg").val();
+    		var text = $("#msg").val();   		
     		ws.send(text);
     		$("#msg").val("");
     	}
     	function showMessage(message){
     		$(".showChatMessage").append("<br>"+message+"</br>");
+    		
     	}
     </script>
   </body>
