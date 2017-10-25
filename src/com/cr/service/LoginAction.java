@@ -29,10 +29,10 @@ public class LoginAction extends HttpServlet{
 		String passwd=req.getParameter("passwd");
 		LoginDAO loginDAO = new LoginDAO();
 		User user =loginDAO.selectUser(username, passwd);
-		HttpSession session = req.getSession();
+		//HttpSession session = req.getSession();
 		if(user != null){
 			req.setAttribute("username", user.getUsername());
-			session.setAttribute("username", user.getUsername());
+			//session.setAttribute("username", user.getUsername());
 			req.getRequestDispatcher("page/ChatRoom.jsp").forward(req, resp);
 		}else{
 			req.setAttribute("message", "username or passwd is wrong");

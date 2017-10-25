@@ -37,7 +37,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	/*
     	 *监听的三种状态变化，js会回调
     	 */
-    	var ws = new WebSocket("ws://127.0.0.1:8080/ChatRoom/webSocket");   
+    	var ws = new WebSocket("ws://127.0.0.1:8080/ChatRoom/webSocket/"+username);   
     	ws.onopen=function(message){
     	
     	};

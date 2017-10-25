@@ -15,7 +15,8 @@ public class LoginDAO {
 		query.setParameter(0, username);	
 		query.setParameter(1, passwd);	
 		user=(User) query.uniqueResult();
-		session.close();
+		//session.close();
+		//System.out.print("success:"+user.getId());
 		return user;
 	}
 }
