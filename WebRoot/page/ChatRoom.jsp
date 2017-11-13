@@ -3,6 +3,7 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
+<%@taglib prefix="s" uri="/struts-tags" %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -21,6 +22,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
+
 	<p hidden="hidden" name="username" id="username">${requestScope.username }</p>
   	<div class="roomDiv">
 	    <div style="width: 800px; height: 240px; overflow-y: auto; border: 1px solid #333;" id="show">

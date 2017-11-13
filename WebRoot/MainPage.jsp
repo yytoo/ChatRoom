@@ -3,7 +3,7 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
+<%@taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
@@ -26,6 +26,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body id="pg0">
+    <s:combobox list="{'1','2','3'}"></s:combobox>
 	<div id="topbar" class="topbar">
 	  <h1>Good Morning</h1> 	
 	</div>  
@@ -34,11 +35,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="inputDiv">
 			<form action="login" method="POST" id="form">
 				<div class="inputText"><span>用户名： </span><input type="text" name="username" id="username" class="username"></div>
-				<div class="inputText"><span>密&nbsp;&nbsp;&nbsp;&nbsp;码： </span><input type="text" name="passwd" id="passwd" class="passwd"></div>
+				<div class="inputText"><span>密&nbsp;&nbsp;&nbsp;&nbsp;码： </span><input type="text" name="password" id="passwd" class="passwd"></div>
 			</form>
 			<input type="button" onclick="formSubmit()" value="提交">
-		</div>
-		
+		</div>		
 	</div> 
 	<div class="content1">
 		<!-- <div class="qw960">
