@@ -2,6 +2,7 @@ package com.ed.dao;
 
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.hibernate.Session;
@@ -13,8 +14,10 @@ public class CheckExcelDAO {
 		Set<String> ds_product = new HashSet<String>();
 		Session session = HibernateSessionFactory.getSession();
 		String sql="select prod_name from ds_product";
-		List
-		
+		List<String> list = session.createSQLQuery(sql).list();
+		for(int i=0; i<list.size(); i++){
+			ds_product.add(list.get(i));
+		}		
 		return ds_product;
 	}
 }
