@@ -1,5 +1,5 @@
 #MyEclipse Hibernate Properties
-#Mon Oct 23 16:30:19 GMT+08:00 2017
+#Tue Nov 21 15:50:33 GMT+08:00 2017
 sessionFactoryName=
 genBasicCompId=false
 profile=
@@ -22,4 +22,3 @@ reSettingsFile=
 configFile=/ChatRoom/src/hibernate.cfg.xml
 createConfigFile=true
 addLibs2Classpath=false
-baseDaoClass=

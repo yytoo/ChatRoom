@@ -4,21 +4,26 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
 
-<session-factory>
-	<property name="dialect">
-		org.hibernate.dialect.MySQLDialect
-	</property>
-	<property name="connection.url">
-		jdbc:mysql://127.0.0.1:3306/testdata
-	</property>
-	<property name="connection.username">root</property>
-	<property name="connection.password">xxxx</property>
-	<property name="connection.driver_class">
-		com.mysql.jdbc.Driver
-	</property>
-	<property name="myeclipse.connection.profile">testdata</property>
-	<mapping resource="com/cr/bean/User.hbm.xml" />
-	<mapping class="com.cr.bean.User" />
-</session-factory>
+	<session-factory>
+		<property name="dialect">
+			org.hibernate.dialect.MySQLDialect
+		</property>
+		<property name="connection.url">
+			jdbc:mysql://127.0.0.1:3306/plastic3
+		</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">XXXXX</property>
+		<property name="connection.driver_class">
+			com.mysql.jdbc.Driver
+		</property>
+		<property name="myeclipse.connection.profile">
+			customer_infor
+		</property>
+		<!-- <mapping resource="com/cr/bean/User.hbm.xml" />
+			<mapping class="com.cr.bean.User" /> -->
+		<mapping resource="com/ed/bean/Company.hbm.xml" />
+		<mapping resource="com/ed/bean/Member.hbm.xml" />
+		<mapping resource="com/ed/bean/Role.hbm.xml" />
+	</session-factory>
 
 </hibernate-configuration>

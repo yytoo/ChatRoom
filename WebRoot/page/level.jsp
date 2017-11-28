@@ -13,7 +13,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <input type="button" value="检验" onclick="checkexcel()">
 <script type="text/javascript">
 	function checkexcel(){
-		window.location.href("<%=basePath%>checkExcel")
+		var url="<%=basePath%>checkExcel.action";
+		window.location.href="CheckExcel";
 	}
 </script>
 </body>

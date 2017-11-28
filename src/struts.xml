@@ -3,7 +3,8 @@
 <struts>
 	<constant name="struts.devMode" value="false" /> 
 	<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
-  <include file="com/config/chartroom.xml"></include>
-  <include file="com/config/exceldemo.xml"></include>
+  <include file="com/config/chartroom.xml"/>
+  <include file="com/config/exceldemo.xml"/>
   <constant name="struts.multipart.saveDir" value="/tmp"/>
+  
 </struts>

@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
-   <package name="cr.mypackage" extends="struts-default">
-   		<!-- <interceptors>
-	   		<interceptor name="loginInterceptor" class="com.cr.util.LoginInterceptor"></interceptor>
-   		</interceptors>
-   		<default-interceptor-ref name="loginStack"></default-interceptor-ref>
-        <action name="login" class="com.cr.service.LoginAction"  method="Login">
-            <result name="success" type="redirect">/page/ChatRoom.jsp</result>
-            <result name="default" type="redirect">/MainPage.jsp</result>
-           <interceptor-ref name="defaultStack"></interceptor-ref>
-           <interceptor-ref name="loginInterceptor"></interceptor-ref>            
-        </action> --> 
+   <package name="ed.mypackage" extends="struts-default">
         <action name="CheckExcel" class="com.ed.service.CheckExcelAction"  method="checkExcel">
             <result name="success" type="redirect">/page/level.jsp</result>
             <result name="default" type="redirect">/page/level.jsp</result>  
